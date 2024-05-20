@@ -53,9 +53,8 @@ using namespace std;
 //creation of class
 class Hero{
   
-private: 
+private:
 int health ;
-
 public:
 char level ;
 
@@ -73,25 +72,36 @@ int setHealth(int h){
 int main()
 {
 //statically allocation :
+cout << "statically allocation : " << endl;
 Hero h1 ;
-//dynamically allocation :
-Hero h1 ;
-cout << "size of h1 is :" << sizeof(h1)  << endl ;
-cout << "h1 health is : " << h1.getHealth() << endl ;
-
-h1.setHealth(900);
-
-// h1.health = 80;
+h1.setHealth(800);
 h1.level = 'A' ;
+cout << "level is : " << h1.level << endl ;
+cout << "h1 health is :" << h1.getHealth() << endl ;
 
-cout << "health is: " << h1.getHealth() << endl ;
-cout << "level is: " << h1.level << endl ;
+cout << "dynamically allocation : " << endl;
+
+Hero* h2 = new Hero ;
+h2->setHealth(900) ;
+h2->level = 'B' ;
+cout << "level is : " << h2->level << endl ;
+cout << "h1 health is :" << h2->getHealth() << endl ;
+
+
+cout << " by usign * operator :" << endl ;
+Hero *h3 = new Hero ;
+(*h3).level = 'C';
+(*h3).setHealth(400) ;
+cout << "level is :" << (*h3).level <<endl ;
+cout << "h3 health is :" << (*h3).getHealth() ;
+
+
+
+// cout << "health is: " << h1->getHealth() << endl ;
+// cout << "level is: " << h1->level << endl ;
 
 return 0;
-
 }
-
-
 
 //how to access proprty/data members -> using "." operator 
 //access modifier : public ,private , protected 
@@ -107,5 +117,8 @@ return 0;
 
 // size int and char 4+1 = 5 ana chiye but aa aa rha hai size reason ? ?? 
 // homwwork : padding and greedy alignment 
+
+//Dynamic allocation :
+
 
 
