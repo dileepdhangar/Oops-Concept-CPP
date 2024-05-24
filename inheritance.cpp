@@ -179,7 +179,7 @@ return 0;
 
 
 // ambiguity in multiple level inheritance 
-
+/*
 #include <iostream>
 using namespace std;
 class A{
@@ -211,6 +211,6 @@ int main()
 return 0;
 }
 
-
+*/
 
 
