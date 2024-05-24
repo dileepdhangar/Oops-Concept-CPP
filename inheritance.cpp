@@ -133,43 +133,84 @@ return 0;
 
 // third type :multiple inheritance :
 
+// #include <iostream>
+// using namespace std;
+// class Animal
+// {
+
+// public:
+//     int age;
+//     int weight;
+
+// public:
+//     void bark()
+//     {
+//         cout << "barkinnnng " << endl;
+//     }
+// };
+
+// class Human
+// {   
+//     public : 
+//     string color ;
+//     public :
+//     void speak() {
+//         cout << "speaking " << endl ;
+//     }
+// };
+
+
+// //multile inheritanec krte hai 
+// class hybrid: public Animal, public Human {
+
+
+// } ;
+
+
+
+
+// int main()
+// {
+//     hybrid obj1 ;
+//     obj1.speak();
+//     obj1.bark() ;
+//     return 0;
+// }
+
+
+// ambiguity in multiple level inheritance 
+
 #include <iostream>
 using namespace std;
-class Animal
-{
-
-public:
-    int age;
-    int weight;
-
-public:
-    void bark()
-    {
-        cout << "barkinnnng " << endl;
-    }
-};
-
-class Human
-{   
-    public : 
-    string color ;
+class A{
+   public:
+   void abc(){
+    cout << "class A" << endl;
+   }
+} ;
+class B{
     public :
-    void speak() {
-        cout << "speaking " << endl ;
+    void abc() {
+        cout << "class B" << endl ;
     }
-};
+} ;
 
 
-//multile inheritanec krte hai 
-class hybrid: public Animal, public Human {
-
-
+class C: public  A, public  B {
+     public:
 } ;
 
 int main()
 {
-    hybrid obj1 ;
-    obj1.speak();
-    obj1.bark() ;
-    return 0;
+   C object_c ;
+   // ambiguity resolve  in multiple level inheritance :
+   object_c.A :: abc() ;
+
+   object_c.B :: abc() ;
+
+return 0;
 }
+
+
+
+
